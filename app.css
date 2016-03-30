@@ -1,0 +1,203 @@
+/* common styles */
+
+a[class],
+a:hover{
+    text-decoration: none;
+}
+a[class]{
+    color: inherit;
+}
+.mdl-layout__header{
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+[class*=socicon]{
+    font-size: 24px;
+    font-size: 1.5rem;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+[class*=socicon]:not(:first-child){
+    margin-left: 16px;
+    margin-left: 1rem;
+}
+.page{
+    min-height: 100vh;
+}
+.page__sprite{
+    position: absolute;
+    left: -9999px;
+}
+.page__header{
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+                -ms-grid-row-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 5vw;
+}
+.page__header svg{
+    fill: white
+}
+.page__links{
+    margin-left: 5vw;
+}
+.page__title{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: 0;
+    font-size: 32px;
+    font-size: 2rem;
+}
+@media (max-width: 479px) {
+
+    .page__title{
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+}
+.page__content{
+    box-sizing: border-box;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 5vw;
+}
+.page__content_main{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0;
+        -ms-flex: 1 0 0;
+            flex: 1 0 0;
+    padding: 16px 5vw;
+    padding: 1rem 5vw;
+}
+.page__footer{
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+                -ms-grid-row-align: center;
+            align-items: center;
+    padding: 16px 5vw;
+    padding: 1rem 5vw;
+}
+@media (max-width: 479px) {
+
+    .page__footer{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+}
+.page__links,
+        .page__social{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 24px;
+    font-size: 1.5rem;
+}
+@media (max-width: 479px) {
+
+    .page__social{
+        margin-top: 1rem;
+    }
+}
+.page__social svg{
+    fill: #9e9e9e;
+}
+
+/* twitch styles */
+.twitch__tab{
+    position: relative;
+    cursor: pointer;
+}
+.twitch__tab:after{
+    content: '';
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: rgb(96,125,139);
+    -webkit-transition: .3s;
+            transition: .3s;
+}
+.twitch__tab._active:after{
+    right: 0;
+    -webkit-transition: 0s;
+            transition: 0s;
+}
+.twitch__channels{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.twitch__channel-link{
+    height: 100%;
+}
+.twitch__channel-preview{
+    background-size: cover;
+    background-position: center;
+}
+.twitch__channel-preview._error,
+                    .twitch__channel-preview._empty{
+    background: gainsboro;
+    position: relative;
+}
+.twitch__channel-preview._error:before,.twitch__channel-preview._empty:before{
+    content: '\E3B6';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    letter-spacing: 0;
+    font-family: 'Material Icons';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
+.twitch__channel-preview._empty:before{
+    content: '\E3B6';
+    color: darkgray;
+}
+.twitch__channel-preview._error:before{
+    content: '\E3AD';
+    color: lightcoral;
+}
+.twitch__channel-status{
+    box-sizing: border-box;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.twitch__channel-status._online{
+    background: cadetblue;
+}
+.twitch__channel-status._offline{
+    border: 3px solid cadetblue;
+}
+.twitch__channel-status._error{
+    background: lightcoral;
+}
